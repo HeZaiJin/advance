@@ -1,4 +1,1 @@
-Welcome
-OK , Let's do something.
-Check the ssh
-Check the global.
+This is a sample for retrofit.
