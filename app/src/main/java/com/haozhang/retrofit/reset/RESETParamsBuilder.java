@@ -4,7 +4,7 @@ import com.haozhang.retrofit.config.Configs;
 import com.haozhang.retrofit.reset.modle.RequestListEventParams;
 
 /**
- * Created by Administrator on 2016/1/5.
+ * ParamsBuilder
  */
 public class RESETParamsBuilder {
 

@@ -1,7 +1,7 @@
 package com.haozhang.retrofit.reset.modle;
 
 /**
- * Created by Administrator on 2016/1/5.
+ * listEvent 请求params
  */
 public class RequestListEventParams {
     private static final String TAG = "RequestListEventParams";

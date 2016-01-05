@@ -7,7 +7,7 @@ import retrofit.http.POST;
 import retrofit.http.Query;
 
 /**
- * Created by Administrator on 2015/12/18.
+ *ApiServices
  */
 public interface ApiServices {
 

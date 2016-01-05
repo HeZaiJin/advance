@@ -11,7 +11,7 @@ import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 
 /**
- * Created by Administrator on 2016/1/5.
+ * 网络请求
  */
 public class RESETClient {
 
@@ -27,8 +27,8 @@ public class RESETClient {
     private static final ApiServices sHttpService = sRetrofit.create(ApiServices.class);
 
     /**
-     * 获取
-     * @param params
+     * 获取listevent
+     * * @param params
      * @param callback
      */
     public static void qureyListEvent(RequestListEventParams params,Callback<ResponseListEvent> callback){

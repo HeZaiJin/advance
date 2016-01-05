@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Arrays;
 
 /**
- * Created by Administrator on 2016/1/5.
+ * ListEvent 的 response
  */
 public class ResponseListEvent {
 

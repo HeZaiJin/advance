@@ -5,6 +5,9 @@ import android.text.format.Time;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+/**
+ * Calendar工具类
+ */
 public class CalendarUtils {
 
     private static Calendar sCalendar = Calendar.getInstance();

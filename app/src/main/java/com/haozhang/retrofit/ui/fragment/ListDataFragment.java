@@ -60,7 +60,9 @@ public class ListDataFragment extends BaseFragment {
         mAdapter = new ListAdapter();
         mCurrentMonth = CalendarUtils.getCurMonth();
         mCurrentDay = CalendarUtils.getCurDay();
+        // 创建params
         RequestListEventParams params = RESETParamsBuilder.buildRequestListEventParams(mCurrentMonth, mCurrentDay);
+        // 建立请求事件
         RESETClient.qureyListEvent(params, new Callback<ResponseListEvent>() {
             @Override
             public void onResponse(Response<ResponseListEvent> response, Retrofit retrofit) {
@@ -72,7 +74,6 @@ public class ListDataFragment extends BaseFragment {
 
             @Override
             public void onFailure(Throwable t) {
-                Log.d(TAG, "onFailure() called with: " + "t = [" + t + "]");
             }
         });
     }
