@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        >
+        <item
+            android:id="@+id/menu_item_1"
+            android:title="Sample Url"
+            />
+        <item
+            android:id="@+id/menu_item_2"
+            android:title="List Url"
+            />
+
+        <item
+            android:id="@+id/menu_item_3"
+            android:title="Index Three"
+            />
+        <item
+            android:id="@+id/menu_item_4"
+            android:title="Setting"
+            />
+    </group>
+</menu>

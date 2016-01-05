@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">RetrofitDemo</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_retrofit">Retrofit</string>
+    <string name="action_volley">Volley</string>
+    <string name="action_okhttp">OkHttp</string>
+    <string name="action_httputil">HttpUtil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

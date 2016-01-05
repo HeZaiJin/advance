@@ -1,34 +1,34 @@
-package com.haozhang.retrofit.info;
+package com.haozhang.retrofit.reset.modle;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class DataInfo {
+public class CustomEvent {
 
     @SerializedName("day")
     @Expose
-    private Integer day;
+    public Integer day;
     @SerializedName("des")
     @Expose
-    private String des;
+    public String des;
     @SerializedName("id")
     @Expose
-    private Integer id;
+    public Integer id;
     @SerializedName("lunar")
     @Expose
-    private String lunar;
+    public String lunar;
     @SerializedName("month")
     @Expose
-    private Integer month;
+    public Integer month;
     @SerializedName("pic")
     @Expose
-    private String pic;
+    public String pic;
     @SerializedName("title")
     @Expose
-    private String title;
+    public String title;
     @SerializedName("year")
     @Expose
-    private Integer year;
+    public Integer year;
 
     /**
      *
@@ -174,4 +174,17 @@ public class DataInfo {
         this.year = year;
     }
 
+    @Override
+    public String toString() {
+        return "CustomEvent{" +
+                "day=" + day +
+                ", des='" + des + '\'' +
+                ", id=" + id +
+                ", lunar='" + lunar + '\'' +
+                ", month=" + month +
+                ", pic='" + pic + '\'' +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                '}';
+    }
 }

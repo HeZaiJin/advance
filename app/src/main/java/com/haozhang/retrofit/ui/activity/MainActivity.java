@@ -1,30 +1,29 @@
-package com.haozhang.retrofit;
+package com.haozhang.retrofit.ui.activity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
-import com.haozhang.retrofit.api.ApiServices;
-import com.haozhang.retrofit.info.GithubInfo;
+import com.haozhang.retrofit.R;
+import com.haozhang.retrofit.ui.fragment.BaseFragment;
+import com.haozhang.retrofit.ui.fragment.ListDataFragment;
 
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.GsonConverterFactory;
-import retrofit.Response;
-import retrofit.Retrofit;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BaseFragment.OnFragmentInteractionListener {
 
     public final static String TAG ="Retrofit";
-    private final String URL="https://api.github.com";
+    public final String URL="https://api.github.com";
 
-    private RecyclerView mListView;
+    private TextView mContent;
+    private TextView mTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,39 +40,22 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        initData();
+        initView();
     }
 
 
-    public void initView(){
-        mListView  = (RecyclerView) findViewById(R.id.content_list);
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
 
-    public void initData(){
-        // create retrofit
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        // create services with .class
-        ApiServices services = retrofit.create(ApiServices.class);
-        // create enqueue
-
-        Call<GithubInfo> call = services.loadGithubInfos();
-        call.enqueue(new Callback<GithubInfo>() {
-            @Override
-            public void onResponse(Response<GithubInfo> response, Retrofit retrofit) {
-                // get response
-                GithubInfo info = response.body();
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-            }
-        });
-
+    private void initView(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.content,new ListDataFragment());
+        transaction.commit();
     }
 
     @Override
@@ -91,11 +73,23 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        reset();
+        switch (id){
+            case R.id.action_retrofit:
+                break;
+            case R.id.action_volley:
+                break;
+            case R.id.action_okhttp:
+                break;
+            case R.id.action_httputil:
+                break;
         }
-
         return super.onOptionsItemSelected(item);
     }
+
+    public void reset(){
+//        mContent.setText("");
+    }
+
 
 }
