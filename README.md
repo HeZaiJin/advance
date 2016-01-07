@@ -9,4 +9,4 @@
 - [ ] 使用RxBus实现内部通信
 - [ ] 收集一些常用的工具类
 
-**注意维护WIKI**
+**注意维护[WIKI](https://github.com/HeZaiJin/advance/wiki)**
