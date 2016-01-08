@@ -5,6 +5,7 @@ import com.haozhang.retrofit.rest.modle.ResponseListEvent;
 import retrofit.Call;
 import retrofit.http.POST;
 import retrofit.http.Query;
+import rx.Observable;
 
 /**
  *ApiServices
@@ -23,7 +24,11 @@ public interface ApiServices {
      * @return
      */
     @POST("toh")
-    Call<ResponseListEvent> loadListInofs(@Query("v") String v,@Query("key") String key,@Query("month") int month,@Query("day") int day);
+    Observable<ResponseListEvent> loadListInofsWithRx(@Query("v") String v,@Query("key") String key,@Query("month") int month,@Query("day") int day);
+
+
+    @POST("toh")
+    Call<ResponseListEvent> loadListInofsWithCall(@Query("v") String v,@Query("key") String key,@Query("month") int month,@Query("day") int day);
 
     /**历史上的今天API END*/
 

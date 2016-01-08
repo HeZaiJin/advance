@@ -2,16 +2,15 @@ package com.haozhang.retrofit.ui.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.haozhang.retrofit.R;
-import com.haozhang.retrofit.rest.modle.CustomEvent;
 import com.haozhang.retrofit.rest.RESTClient;
 import com.haozhang.retrofit.rest.RESTParamsBuilder;
+import com.haozhang.retrofit.rest.modle.CustomEvent;
 import com.haozhang.retrofit.rest.modle.RequestListEventParams;
 import com.haozhang.retrofit.rest.modle.ResponseListEvent;
 import com.haozhang.retrofit.ui.adapter.ListDataAdapter;
@@ -20,9 +19,10 @@ import com.haozhang.retrofit.utils.CalendarUtils;
 import java.util.Arrays;
 import java.util.List;
 
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * 历史上的今天事件列表
@@ -62,20 +62,34 @@ public class ListDataFragment extends BaseFragment {
         mCurrentDay = CalendarUtils.getCurDay();
         // 创建params
         RequestListEventParams params = RESTParamsBuilder.buildRequestListEventParams(mCurrentMonth, mCurrentDay);
-        // 建立请求事件
-        RESTClient.qureyListEvent(params, new Callback<ResponseListEvent>() {
-            @Override
-            public void onResponse(Response<ResponseListEvent> response, Retrofit retrofit) {
-                Log.d(TAG, "onResponse() called with: " + "response = [" + response.body());
-                CustomEvent[] result = response.body().getResult();
-                List<CustomEvent> infos = Arrays.asList(result);
-                mAdapter.refresh(infos);
-            }
+        RESTClient.queryListEvent(params)
+                .subscribeOn(Schedulers.io())
+                .observeOn(Schedulers.newThread())
+                .map(new Func1<ResponseListEvent, List<CustomEvent>>() {
+                    @Override
+                    public List<CustomEvent> call(ResponseListEvent responseListEvent) {
+                        CustomEvent[] result = responseListEvent.getResult();
+                        return Arrays.asList(result);
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<List<CustomEvent>>() {
+                    @Override
+                    public void onCompleted() {
 
-            @Override
-            public void onFailure(Throwable t) {
-            }
-        });
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onNext(List<CustomEvent> customEvents) {
+                        mAdapter.refresh(customEvents);
+                    }
+                });
+
     }
 
 
