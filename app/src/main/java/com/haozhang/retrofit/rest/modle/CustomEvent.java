@@ -1,4 +1,4 @@
-package com.haozhang.retrofit.reset.modle;
+package com.haozhang.retrofit.rest.modle;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

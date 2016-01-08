@@ -1,6 +1,6 @@
-package com.haozhang.retrofit.reset.service;
+package com.haozhang.retrofit.rest.service;
 
-import com.haozhang.retrofit.reset.modle.ResponseListEvent;
+import com.haozhang.retrofit.rest.modle.ResponseListEvent;
 
 import retrofit.Call;
 import retrofit.http.POST;

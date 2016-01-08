@@ -9,12 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.haozhang.retrofit.R;
-import com.haozhang.retrofit.reset.modle.CustomEvent;
-import com.haozhang.retrofit.reset.RESETClient;
-import com.haozhang.retrofit.reset.RESETParamsBuilder;
-import com.haozhang.retrofit.reset.modle.RequestListEventParams;
-import com.haozhang.retrofit.reset.modle.ResponseListEvent;
-import com.haozhang.retrofit.ui.adapter.ListAdapter;
+import com.haozhang.retrofit.rest.modle.CustomEvent;
+import com.haozhang.retrofit.rest.RESTClient;
+import com.haozhang.retrofit.rest.RESTParamsBuilder;
+import com.haozhang.retrofit.rest.modle.RequestListEventParams;
+import com.haozhang.retrofit.rest.modle.ResponseListEvent;
+import com.haozhang.retrofit.ui.adapter.ListDataAdapter;
 import com.haozhang.retrofit.utils.CalendarUtils;
 
 import java.util.Arrays;
@@ -34,7 +34,7 @@ public class ListDataFragment extends BaseFragment {
     private int mCurrentMonth = -1;
     private int mCurrentDay = -1;
 
-    private ListAdapter mAdapter;
+    private ListDataAdapter mAdapter;
     private ListView mListView;
 
     public ListDataFragment() {
@@ -52,18 +52,18 @@ public class ListDataFragment extends BaseFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        init(context);
+        init();
     }
 
 
-    public void init(Context context) {
-        mAdapter = new ListAdapter();
+    public void init() {
+        mAdapter = new ListDataAdapter(ListDataFragment.this);
         mCurrentMonth = CalendarUtils.getCurMonth();
         mCurrentDay = CalendarUtils.getCurDay();
         // 创建params
-        RequestListEventParams params = RESETParamsBuilder.buildRequestListEventParams(mCurrentMonth, mCurrentDay);
+        RequestListEventParams params = RESTParamsBuilder.buildRequestListEventParams(mCurrentMonth, mCurrentDay);
         // 建立请求事件
-        RESETClient.qureyListEvent(params, new Callback<ResponseListEvent>() {
+        RESTClient.qureyListEvent(params, new Callback<ResponseListEvent>() {
             @Override
             public void onResponse(Response<ResponseListEvent> response, Retrofit retrofit) {
                 Log.d(TAG, "onResponse() called with: " + "response = [" + response.body());

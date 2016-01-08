@@ -1,4 +1,4 @@
-package com.haozhang.retrofit.reset.modle;
+package com.haozhang.retrofit.rest.modle;
 
 /**
  * listEvent 请求params
