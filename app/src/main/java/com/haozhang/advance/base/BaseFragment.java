@@ -1,4 +1,4 @@
-package com.haozhang.retrofit.ui.fragment;
+package com.haozhang.advance.base;
 
 import android.content.Context;
 import android.net.Uri;
@@ -9,9 +9,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.haozhang.advance.utils.Logger;
 import com.haozhang.retrofit.R;
 
-public class BaseFragment extends Fragment {
+import rx.Observable;
+import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+public class BaseFragment<T> extends Fragment {
+
+    private static final String TAG = "BaseFragment";
+
+    private Subscription sSubscription;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -26,6 +38,65 @@ public class BaseFragment extends Fragment {
     public BaseFragment() {
         // Required empty public constructor
     }
+
+    protected void startAsyncOperation(){
+        sSubscription = getSubscription();
+    }
+
+    protected Subscription getSubscription(){
+        if (null!=getObservable(null)) {
+            return getObservable(null).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(getSubscriber());
+        }
+        return  null ;
+    }
+
+    protected Observable<T> getObservable(Object obj) {
+        return null;
+    }
+
+    protected Subscriber<T> getSubscriber() {
+        return new Subscriber<T>() {
+            @Override
+            public void onCompleted() {
+                onRxCompleted();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                onRxError();
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onNext(T t) {
+                onRxNext(t);
+            }
+        };
+    }
+
+
+    protected void onRxCompleted() {
+        Logger.d(TAG, "onCompleted");
+    }
+
+    protected void onRxError() {
+        Logger.d(TAG, "onError");
+
+    }
+
+    protected void onRxNext(T t) {
+        Logger.d(TAG, "onNext");
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (null != sSubscription ) {
+            sSubscription.unsubscribe();
+        }
+    }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -55,7 +126,7 @@ public class BaseFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
         textView.setText(R.string.hello_blank_fragment);
         return textView;
@@ -90,7 +161,7 @@ public class BaseFragment extends Fragment {
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     * <p>
+     * <p/>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.

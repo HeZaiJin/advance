@@ -1,9 +1,9 @@
-package com.haozhang.retrofit.rest;
+package com.haozhang.advance.rest;
 
-import com.haozhang.retrofit.config.Configs;
-import com.haozhang.retrofit.rest.modle.RequestListEventParams;
-import com.haozhang.retrofit.rest.modle.ResponseListEvent;
-import com.haozhang.retrofit.rest.service.ApiServices;
+import com.haozhang.advance.config.Configs;
+import com.haozhang.advance.rest.modle.ResponseListEvent;
+import com.haozhang.advance.rest.modle.RequestListEventParams;
+import com.haozhang.advance.rest.service.ApiServices;
 
 import retrofit.Call;
 import retrofit.Callback;

@@ -1,4 +1,4 @@
-package com.haozhang.retrofit.config;
+package com.haozhang.advance.config;
 
 /**
  * Created by Administrator on 2016/1/5.

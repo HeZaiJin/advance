@@ -1,5 +1,6 @@
-package com.haozhang.retrofit.utils;
+package com.haozhang.advance.utils;
 
+import android.os.Looper;
 import android.util.Log;
 import android.os.Environment;
 import android.util.SparseArray;
@@ -62,6 +63,15 @@ public final class Logger {
 
     public static void d(String tag, String msg, Throwable tr) {
         trace(Log.DEBUG, tag, msg, tr);
+    }
+
+    /**
+     * 查看当前线程是否在主线程当中
+     * @param tag
+     * @param str
+     */
+    public static void checkThread(String tag,String str){
+        d(tag,str+"int main thread :"+(Looper.myLooper() == Looper.getMainLooper()));
     }
 
     public static void i(String tag, String msg) {

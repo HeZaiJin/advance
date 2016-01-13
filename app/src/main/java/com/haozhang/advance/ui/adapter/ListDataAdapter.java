@@ -1,4 +1,4 @@
-package com.haozhang.retrofit.ui.adapter;
+package com.haozhang.advance.ui.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,10 +7,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.haozhang.advance.rest.modle.CustomEvent;
+import com.haozhang.advance.ui.fragment.ListDataFragment;
+import com.haozhang.advance.utils.ViewHolder;
 import com.haozhang.retrofit.R;
-import com.haozhang.retrofit.rest.modle.CustomEvent;
-import com.haozhang.retrofit.ui.fragment.ListDataFragment;
-import com.haozhang.retrofit.utils.ViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

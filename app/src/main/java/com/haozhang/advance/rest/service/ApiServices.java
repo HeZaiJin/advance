@@ -1,6 +1,6 @@
-package com.haozhang.retrofit.rest.service;
+package com.haozhang.advance.rest.service;
 
-import com.haozhang.retrofit.rest.modle.ResponseListEvent;
+import com.haozhang.advance.rest.modle.ResponseListEvent;
 
 import retrofit.Call;
 import retrofit.http.POST;
