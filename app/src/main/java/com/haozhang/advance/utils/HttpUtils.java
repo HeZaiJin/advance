@@ -1,11 +1,13 @@
 package com.haozhang.advance.utils;
 
+/*
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+*/
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -52,13 +54,13 @@ public class HttpUtils {
             }
         }.start();
     }
-
-    /**
+/*
+    *//**
      * @param urlStr
      * @param postParameters
      * @param callBack
      * @throws Exception
-     */
+     *//*
     public static void doPostAsyn(final String urlStr,final List<NameValuePair> postParameters,
                                   final CallBack callBack)  {
         new Thread() {
@@ -73,7 +75,7 @@ public class HttpUtils {
                 }
             }
         }.start();
-    }
+    }*/
     public static void doPostAsyn(final String urlStr,final String content,
                                   final CallBack callBack)  {
         new Thread() {
@@ -144,12 +146,12 @@ public class HttpUtils {
 
     }
 
-
-    /**
+/*
+    *//**
      * @param url
      * @param postParameters
      * @return
-     */
+     *//*
     public static HttpResponseObject doPost(String url, List<NameValuePair> postParameters) {
         HttpResponseObject result = new HttpResponseObject();
         BufferedReader reader = null;
@@ -187,7 +189,7 @@ public class HttpUtils {
         }
 
         return result;
-    }
+    }*/
 
     public static HttpResponseObject postHttpContent(String strurl,String content){
         HttpResponseObject result = new HttpResponseObject();

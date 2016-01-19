@@ -3,17 +3,18 @@ package com.haozhang.advance.ui.activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.haozhang.advance.base.BaseFragment;
+import com.haozhang.advance.ui.dialog.CustomDialog;
 import com.haozhang.advance.ui.fragment.ListDataFragment;
 import com.haozhang.retrofit.R;
 
@@ -36,8 +37,7 @@ public class MainActivity extends AppCompatActivity implements BaseFragment.OnFr
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                new CustomDialog(MainActivity.this).setLayoutParams(1200,400, Gravity.BOTTOM).show();
             }
         });
         initView();
