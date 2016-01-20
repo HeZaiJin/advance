@@ -3,7 +3,7 @@ package com.haozhang.advance.ui.dialog;
 import android.content.Context;
 import android.view.View;
 
-import com.haozhang.advance.base.BaseDialog;
+import com.haozhang.advance.widget.base.BaseDialog;
 import com.haozhang.retrofit.R;
 
 public class CustomDialog extends BaseDialog {

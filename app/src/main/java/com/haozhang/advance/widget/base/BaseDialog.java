@@ -1,4 +1,4 @@
-package com.haozhang.advance.base;
+package com.haozhang.advance.widget.base;
 
 import android.app.Dialog;
 import android.content.Context;

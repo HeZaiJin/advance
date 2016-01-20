@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IndicatorView">
+        <attr name="count" format="integer" />
+        <attr name="select_color" format="color" />
+        <attr name="default_color" format="color" />
+        <!-- 左右方向，左为-1，右为1，默认为0是中间-->
+        <attr name="gravity" format="enum">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="padding" format="integer" />
+        <attr name="radius" format="integer" />
+        <attr name="select_drawable" format="reference" />
+        <attr name="default_drawable" format="reference" />
+    </declare-styleable>
+</resources>

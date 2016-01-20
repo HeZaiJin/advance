@@ -5,17 +5,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.haozhang.advance.base.BaseFragment;
-import com.haozhang.advance.rest.RESTParamsBuilder;
-import com.haozhang.advance.rest.modle.ResponseListEvent;
-import com.haozhang.advance.utils.CalendarUtils;
-import com.haozhang.retrofit.R;
 import com.haozhang.advance.rest.RESTClient;
+import com.haozhang.advance.rest.RESTParamsBuilder;
 import com.haozhang.advance.rest.modle.CustomEvent;
 import com.haozhang.advance.rest.modle.RequestListEventParams;
+import com.haozhang.advance.rest.modle.ResponseListEvent;
 import com.haozhang.advance.ui.adapter.ListDataAdapter;
+import com.haozhang.advance.utils.CalendarUtils;
+import com.haozhang.indicator.IndicatorView;
+import com.haozhang.retrofit.R;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,6 +42,7 @@ public class ListDataFragment extends BaseFragment {
 
     private ListDataAdapter mAdapter;
     private ListView mListView;
+    private IndicatorView mIndicator;
 
     public ListDataFragment() {
         super();
@@ -48,8 +51,21 @@ public class ListDataFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_info_layout, null, false);
+        mIndicator = (IndicatorView) view.findViewById(R.id.indicatior);
+        mIndicator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mIndicator.setSelectIndex((mIndicator.getSelectIndex() + 1)%mIndicator.getCount());
+            }
+        });
         mListView = (ListView) view.findViewById(R.id.list_view);
         mListView.setAdapter(mAdapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mIndicator.setCount(mIndicator.getCount()+1);
+            }
+        });
         return view;
     }
 
