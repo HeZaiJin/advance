@@ -4,7 +4,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion '19.1.0'
     defaultConfig {
-        applicationId "com.haozhang.advance"
+        applicationId "com.hezaijin.advance"
         minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
@@ -18,7 +18,6 @@ android {
     }
     productFlavors {
     }
-    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -36,5 +35,6 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.3'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.3'
-    compile project(':indicator')
+    compile project(':utils')
+    compile project(':widgets')
 }

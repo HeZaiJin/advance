@@ -4,18 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <com.haozhang.indicator.IndicatorView
+    <com.hezaijin.advance.widgets.view.IndicatorView
+        android:layout_width="match_parent"
         android:id="@+id/indicatior"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        app:count="1"
-        app:default_color="@color/colorPrimary"
-        app:gravity="right"
-        android:paddingRight="40dp"
+        app:gravity="center"
         app:select_color="@color/colorAccent"
-
-        />
+        app:default_color="@color/colorPrimary"
+        app:count="5"
+        app:padding="10dp"
+        app:radius="10dp"
+        android:layout_height="100dp" />
 
 
     <ListView
