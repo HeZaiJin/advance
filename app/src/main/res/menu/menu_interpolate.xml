@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hezaijin.advance.ui.activity.InterpolateActivity">
+    <item
+        android:id="@+id/interpolate_accelerate"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_accelerate"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/interpolate_accelerate_decelerate"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_accelerate_decelerate"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/interpolate_anticipate"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_anticipate"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/interpolate_anticipate_overshoot"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_anticipate_overshoot"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_base"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_base"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_bounce"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_bounce"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_cycle"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_cycle"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_decelerate"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_decelerate"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_fast_out_linear"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_fast_out_linear"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_fast_out_show"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_fast_out_show"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_linear"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_linear"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_linear_out_show"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_linear_out_show"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_over_shoot"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_over_shoot"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/interpolate_path"
+        android:orderInCategory="100"
+        android:title="@string/interpolate_path"
+        app:showAsAction="never" />
+
+</menu>

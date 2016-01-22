@@ -19,7 +19,6 @@ public class CustomScrollView extends ScrollView {
     private View inner;
     private float y;
     private Rect normal = new Rect();
-    ;
 
     public CustomScrollView(Context context) {
         super(context);
@@ -97,7 +96,7 @@ public class CustomScrollView extends ScrollView {
         // 开启移动动画
         TranslateAnimation ta = new TranslateAnimation(0, 0, inner.getTop(),
                 normal.top);
-        ta.setDuration(200);
+        ta.setDuration(1000);
         inner.startAnimation(ta);
         // 设置回到正常的布局位置
         inner.layout(normal.left, normal.top, normal.right, normal.bottom);

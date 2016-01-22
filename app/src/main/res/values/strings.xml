@@ -8,5 +8,21 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_scrollable">ScrollableActivity</string>
+    <string name="title_activity_interpolate">InterpolateActivity</string>
 
+    
+    <string name="interpolate_accelerate_decelerate">AccelerateDecelerateInterpolator</string>
+    <string name="interpolate_accelerate">AccelerateInterpolator</string>
+    <string name="interpolate_anticipate">AnticipateInterpolator</string>
+    <string name="interpolate_anticipate_overshoot">AnticipateOvershootInterpolator</string>
+    <string name="interpolate_base">BaseInterpolator</string>
+    <string name="interpolate_bounce">BounceInterpolator</string>
+    <string name="interpolate_cycle">CycleInterpolator</string>
+    <string name="interpolate_decelerate">DecelerateInterpolator</string>
+    <string name="interpolate_fast_out_linear">FastOutLinearInInterpolator</string>
+    <string name="interpolate_fast_out_show">FastOutSlowInInterpolator</string>
+    <string name="interpolate_linear">LinearInterpolator</string>
+    <string name="interpolate_linear_out_show">LinearOutSlowInInterpolator</string>
+    <string name="interpolate_over_shoot">OvershootInterpolator</string>
+    <string name="interpolate_path">PathInterpolator</string>
 </resources>
