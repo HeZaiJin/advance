@@ -81,7 +81,7 @@ public class IndicatorView extends View {
             case 1:
                 start_x = getWidth() - (getPaddingRight() + (2 * mCount - 1) * mRadius + (mCount - 1) * mPadding);
                 break;
-            case -1:
+            case 2:
                 start_x = getPaddingLeft();
                 break;
         }
