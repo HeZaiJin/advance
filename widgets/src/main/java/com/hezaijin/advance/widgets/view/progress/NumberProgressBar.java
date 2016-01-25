@@ -1,4 +1,4 @@
-package com.hezaijin.advance.widgets.view;
+package com.hezaijin.advance.widgets.view.progress;
 
 import android.content.Context;
 import android.content.res.TypedArray;

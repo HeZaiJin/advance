@@ -17,7 +17,7 @@ import com.hezaijin.advance.rest.modle.RequestListEventParams;
 import com.hezaijin.advance.rest.modle.ResponseListEvent;
 import com.hezaijin.advance.ui.adapter.ListDataAdapter;
 import com.hezaijin.advance.utils.CalendarUtils;
-import com.hezaijin.advance.widgets.view.IndicatorView;
+import com.hezaijin.advance.widgets.view.progress.IndicatorView;
 
 import java.util.Arrays;
 import java.util.List;
