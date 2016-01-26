@@ -54,9 +54,9 @@ public class Transition {
         float srcRectRatio = MathUtils.truncate(MathUtils.getRectRatio(srcRect), 2);
         float dstRectRatio = MathUtils.truncate(MathUtils.getRectRatio(dstRect), 2);
 
-        if (srcRectRatio != dstRectRatio) {
+       /* if (srcRectRatio != dstRectRatio) {
             throw new RuntimeException("Can't perform Ken Burns effect on rects with distinct aspect ratios!");
-        }
+        }*/
         mSrcRect = srcRect;
         mDstRect = dstRect;
         mDuration = duration;

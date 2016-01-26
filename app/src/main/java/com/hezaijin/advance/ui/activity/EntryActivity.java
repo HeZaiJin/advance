@@ -1,7 +1,7 @@
 package com.hezaijin.advance.ui.activity;
 
 import android.os.Bundle;
-import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
 
 import com.hezaijin.advance.R;
 import com.hezaijin.advance.base.BaseActivity;
@@ -22,12 +22,13 @@ public class EntryActivity extends BaseActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
+
         SystemBarTintManager manager = new SystemBarTintManager(this);
         manager.setNavigationBarTintEnabled(true);
         manager.setStatusBarTintEnabled(true);
+
         KenBurnsView kenBurnsView = (KenBurnsView) findViewById(R.id.burns_view);
-        RandomTransitionGenerator generator = new RandomTransitionGenerator(1000,new AccelerateDecelerateInterpolator());
-        kenBurnsView.setTransitionGenerator(generator);
+        kenBurnsView.setImageDrawable(getResources().getDrawable(R.drawable.bg_entry,null));
         kenBurnsView.setTransitionListener(new KenBurnsView.TransitionListener() {
             @Override
             public void onTransitionStart(Transition transition) {
