@@ -21,8 +21,8 @@
     </declare-styleable>
 
     <declare-styleable name="NumberProgressBar">
-        <attr format="integer" name="np_max" />
-        <attr format="integer" name="np_progress" />
+        <attr name="np_max" format="integer" />
+        <attr name="np_progress" format="integer" />
         <attr name="progress_num" format="integer" />
         <attr name="number_progressbar_max" format="integer" />
         <attr name="progress_unreached_color" format="color" />
@@ -46,4 +46,19 @@
         <attr name="numberProgressBarStyle" format="reference" />
     </declare-styleable>
 
+    <attr name="discreteSeekBarStyle" format="reference" />
+    <declare-styleable name="DiscreteSeekBar">
+        <attr name="dsb_min" format="integer|dimension" />
+        <attr name="dsb_max" format="integer|dimension" />
+        <attr name="dsb_value" format="integer|dimension" />
+        <attr name="dsb_mirrorForRtl" format="boolean" />
+        <attr name="dsb_allowTrackClickToDrag" format="boolean" />
+        <attr name="dsb_progressColor" format="color|reference" />
+        <attr name="dsb_trackColor" format="color|reference" />
+        <attr name="dsb_indicatorTextAppearance" format="reference" />
+        <attr name="dsb_indicatorColor" format="color|reference" />
+        <attr name="dsb_indicatorElevation" format="dimension" />
+        <attr name="dsb_indicatorFormatter" format="string|reference" />
+        <attr name="dsb_rippleColor" format="color|reference" />
+    </declare-styleable>
 </resources>
