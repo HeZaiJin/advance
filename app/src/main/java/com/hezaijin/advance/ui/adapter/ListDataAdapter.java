@@ -44,7 +44,7 @@ public class ListDataAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (null == convertView) {
-            convertView = View.inflate(parent.getContext(), R.layout.content_list_item, null);
+            convertView = View.inflate(parent.getContext(), R.layout.item_listdata, null);
         }
         TextView title = ViewHolder.get(convertView, R.id.item_title);
         TextView detail = ViewHolder.get(convertView, R.id.item_date);

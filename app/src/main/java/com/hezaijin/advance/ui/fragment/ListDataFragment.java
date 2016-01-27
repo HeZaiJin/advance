@@ -49,7 +49,7 @@ public class ListDataFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.list_info_layout, null, false);
+        View view = inflater.inflate(R.layout.fragment_listdata, null, false);
         mIndicator = (IndicatorView) view.findViewById(R.id.indicatior);
         mIndicator.setOnClickListener(new View.OnClickListener() {
             @Override

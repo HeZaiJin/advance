@@ -53,7 +53,7 @@
             android:name=".ui.activity.EntryActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_entry"
-            android:theme="@style/FullscreenTheme">
+            android:theme="@style/BaseTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

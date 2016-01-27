@@ -1,46 +1,46 @@
 package com.hezaijin.advance.ui.activity;
 
 import android.os.Bundle;
-import android.view.animation.LinearInterpolator;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
 import com.hezaijin.advance.R;
 import com.hezaijin.advance.base.BaseActivity;
+import com.hezaijin.advance.ui.fragment.EntryFragment;
+import com.hezaijin.advance.ui.fragment.ListDataFragment;
 import com.hezaijin.advance.utils.Logger;
-import com.hezaijin.advance.utils.SystemBarTintManager;
-import com.hezaijin.advance.widgets.view.entry.KenBurnsView;
-import com.hezaijin.advance.widgets.view.entry.RandomTransitionGenerator;
-import com.hezaijin.advance.widgets.view.entry.Transition;
 
-public class EntryActivity extends BaseActivity {
-    private static final String TAG = "EntryActivity" ;
+public class EntryActivity extends BaseActivity implements EntryFragment.onEntryCallback {
+    private static final String TAG = "EntryActivity";
 
-
+    FragmentManager mFragmentManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (null!=getActionBar()) {
-            getActionBar().hide();
-        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
-
-        SystemBarTintManager manager = new SystemBarTintManager(this);
-        manager.setNavigationBarTintEnabled(true);
-        manager.setStatusBarTintEnabled(true);
-
-        KenBurnsView kenBurnsView = (KenBurnsView) findViewById(R.id.burns_view);
-        kenBurnsView.setImageDrawable(getResources().getDrawable(R.drawable.bg_entry,null));
-        kenBurnsView.setTransitionListener(new KenBurnsView.TransitionListener() {
-            @Override
-            public void onTransitionStart(Transition transition) {
-                Logger.d(TAG, "onTransitionStart");
-            }
-
-            @Override
-            public void onTransitionEnd(Transition transition) {
-                Logger.d(TAG, "onTransitionEnd");
-            }
-        });
-        kenBurnsView.resume();
+        initEntryFragment();
     }
 
+    private void initEntryFragment(){
+        mFragmentManager = getSupportFragmentManager();
+        FragmentTransaction ft = mFragmentManager.beginTransaction();
+        ft.replace(R.id.entry_content, new EntryFragment());
+        ft.commit();
+
+    }
+
+    @Override
+    public void onEntryEnter() {
+        Logger.d(TAG,"onEntryEnter");
+    }
+
+    @Override
+    public void onEntryExit() {
+        FragmentTransaction transaction = mFragmentManager.beginTransaction();
+        transaction.setCustomAnimations(R.anim.activity_enter_in,R.anim.activity_enter_out);
+        transaction.replace(R.id.entry_content, new ListDataFragment());
+        transaction.commit();
+
+        Logger.d(TAG, "onEntryExit");
+    }
 }

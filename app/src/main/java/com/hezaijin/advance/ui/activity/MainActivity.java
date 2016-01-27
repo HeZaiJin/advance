@@ -18,7 +18,7 @@ import com.hezaijin.advance.base.BaseFragment;
 import com.hezaijin.advance.ui.dialog.CustomDialog;
 import com.hezaijin.advance.ui.fragment.ListDataFragment;
 
-public class MainActivity extends AppCompatActivity implements BaseFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity {
 
     public final static String TAG ="Retrofit";
     public final String URL="https://api.github.com";
@@ -41,13 +41,6 @@ public class MainActivity extends AppCompatActivity implements BaseFragment.OnFr
             }
         });
         initView();
-    }
-
-
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 
 
